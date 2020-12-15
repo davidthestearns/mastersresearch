@@ -9,6 +9,6 @@
 
 module purge
 
-module load matlab
+module load matlab/R2019b
 
-matlab -nodesktop -nodisplay -r ‘clear; ecorunner2;’
+matlab -nodesktop -nodisplay -r "ecorunner2()"
