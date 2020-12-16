@@ -119,7 +119,7 @@ hold off
 function sim = simData(time,allTimeX,allTimeY,filename)
     ani = [];
     colors = ['r','g','b','y','m'];
-    v = VideoWriter(filename,'MPEG-4');
+    v = VideoWriter(filename,'Motion JPEG 2000');
     open(v)
     for i= 1:time
 
