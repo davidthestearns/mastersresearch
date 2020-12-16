@@ -28,8 +28,8 @@ xData = table2array(readtable('bigX.csv'));
 yData = table2array(readtable('bigY.csv'));
 allTimeX = zeros(time,N,numgroups);
 allTimeY = zeros(time,N,numgroups);
-allTimeX(1,:,:)=xData;
-allTimeY(1,:,:)=yData;
+allTimeX(1,:,:)=xData(1:N,:);
+allTimeY(1,:,:)=yData(1:N,:);
 %iterating code for calculating motion of particles
 while sted<numsted
     oldX = allTimeX(i,:,:);
@@ -108,7 +108,7 @@ while sted<numsted
         break
     end
 end
-filename = 'twogroupenv_' + N + '_individuals.mp4';
+filename = 'twogroupenv_' + string(N) + '_individuals.mp4';
 anim = simData(time,allTimeX,allTimeY,filename);
 hold on
 scatter(allTimeX(1,:,1),allTimeY(1,:,1),'r')
